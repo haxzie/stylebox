@@ -11,8 +11,8 @@ function Header() {
             <div style={{ padding: "25px 15px" }}>
                 <Row>
                     <h1 style={{
-                        fontSize: "2em",
-                        fontWeight: "bold"
+                        fontSize: "1.5em",
+                        fontWeight: "normal"
                     }}>StyleBox</h1>
                     <Expand/>
                     <img src={GitHubLogo} className={styles.navIcon} />

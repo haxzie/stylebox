@@ -1,0 +1,43 @@
+@import '../../styles/setup/mixins';
+
+.home-page-header {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+
+    h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin: 15px 0 0 0;
+        font-size: 1.2em;
+        opacity: 0.8;
+    }
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 25px 15px;
+
+    @include respond-below(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-below(sm) {
+        grid-template-columns: 1fr;
+    }
+
+    .content-item {
+        background: #ffffff;
+        border-radius: 6px;
+        padding: 10px;
+        height: 200px;
+        box-shadow: 0px 5px 8px #1b293a1a;
+    }
+}
