@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption&display=swap');
+
+* {
+  font-family: 'PT Sans Caption', sans-serif;
+
+}
+
+
+.fc {
+  color: var(--font-color);
+}
+
+.fc-primary {
+  color: var(--color-primary);
+}
+
+body {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    font-weight: 400px;
+    line-height: 20px;
+    // font-family: 'Poppins', sans-serif;
+    // font-family: "Noto Sans", sans-serif;
+    font-family: 'PT Sans Caption', sans-serif;
+    color: var(--font-color, #3d3d3d);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      padding: 0;
+      margin: 0;
+      font-weight: 400;
+      color: var(--font-color, #1a1a1a);
+      font-family: 'PT Sans Caption', sans-serif
+    }
+  
+    a {
+      text-decoration: none;
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }

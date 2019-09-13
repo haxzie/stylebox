@@ -1,0 +1,106 @@
+html,
+body,
+#___gatsby {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-secondary);
+}
+
+body {
+  margin: 0px;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  max-height: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+// border and padding controls
+
+// ================== Padding and Margincontrols =======================
+@for $i from 1 to 51 {
+  .pad-#{$i} {
+    padding: $i + px;
+  }
+  .pad-top-#{$i} {
+    padding-top: $i + px;
+  }
+  .pad-bottom-#{$i} {
+    padding-bottom: $i + px;
+  }
+  .pad-left-#{$i} {
+    padding-left: $i + px;
+  }
+  .pad-right-#{$i} {
+    padding-right: $i + px;
+  }
+  .mar-#{$i} {
+    margin: $i + px;
+  }
+  .mar-top-#{$i} {
+    margin-top: $i + px;
+  }
+  .mar-bottom-#{$i} {
+    margin-bottom: $i + px;
+  }
+  .mar-left-#{$i} {
+    margin-left: $i + px;
+  }
+  .mar-right-#{$i} {
+    margin-right: $i + px;
+  }
+}
+
+.mar-top-auto {
+  margin-top: auto;
+}
+.mar-sides {
+  margin: 0 auto;
+}
+.mar-left-auto {
+  margin-left: auto;
+}
+.mar-right-auto {
+  margin-left: auto;
+}
+.mar-bottom-auto {
+  margin-bottom: auto;
+}
+// ================== Border controls ===============
+.border-bottom {
+  border-bottom: 1px solid var(--border-color);
+}
+
+@for $i from 1 to 100 {
+  .br-#{$i} {
+    border-radius: $i + px;
+  }
+}
+// flex controls
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.flex-expand {
+  flex: 1;
+}
