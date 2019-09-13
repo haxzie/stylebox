@@ -42,6 +42,7 @@ body {
     a {
       text-decoration: none;
       outline: none;
+      color: var(--color-primary);
       &:focus {
         outline: none;
       }

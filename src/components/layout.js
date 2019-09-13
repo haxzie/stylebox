@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
+import Footer from "./Footer"
 import { Column } from "./Layout";
 import Container from "./Container";
 
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       <Container>
         {children}
       </Container>
+      <Footer/>
     </>
   )
 }
