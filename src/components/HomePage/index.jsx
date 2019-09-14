@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { Column, Row } from '../Layout';
+import ViewCard from '../ViewCard';
 
 function HomePage({ maps }) {
     console.log(JSON.stringify(maps, null, 2))
@@ -14,10 +15,13 @@ function HomePage({ maps }) {
 
             {/* Content display grid */}
             <div className={styles.contentGrid}>
-                <div className={styles.contentItem}></div>
-                <div className={styles.contentItem}></div>
-                <div className={styles.contentItem}></div>
-                <div className={styles.contentItem}></div>
+                {
+                    maps.map(item => {
+                        return (
+                            <ViewCard data={item.frontmatter} />
+                        )
+                    })
+                }
             </div>
         </Column>
     )
