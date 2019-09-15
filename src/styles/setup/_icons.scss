@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
+.wf-loading, .wf-materialicons-n4-inactive {
+  .material-icons {
+    display: none;
+  }
+}
 .material-icons {
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
