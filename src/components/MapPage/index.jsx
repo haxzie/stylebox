@@ -1,12 +1,30 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './styles.module.scss'
-import ReactMapboxGl from "react-mapbox-gl"
+// import ReactMapboxGl from "react-mapbox-gl"
 import { Row, Column, Expand } from '../Layout'
+
+
+// hack to get the mapbox module out of webpack bundling
+let ReactMapboxGl = {}
+if (typeof window !== `undefined`) {
+  ReactMapboxGl = require('react-mapbox-gl')
+} else {
+  ReactMapboxGl.Map = () => {
+    return class Mock extends React.Component {
+      constructor() {
+        super()
+      }
+      render() {
+        return <div />
+      }
+    }
+  }
+}
 
 function MapPage({ data }) {
 
-    const Map = ReactMapboxGl({
+    const Map = ReactMapboxGl.Map({
         accessToken: "pk.eyJ1IjoiaGF4emllIiwiYSI6ImNqZ2c2NWp3OTBxenAzM3FzeThydmZ0YncifQ.584ugILuKFfDPTxqyiO_0g"
     });
 

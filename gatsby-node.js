@@ -1,6 +1,24 @@
 const path = require('path');
 
-exports.createPages = ({ actions, graphql }) => {
+// avoid webpack from messing with mapbox package
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html") {
+        actions.setWebpackConfig({
+            module: {
+                rules: [
+                    {
+                        test: /mapbox-gl/,
+                        use: loaders.null(),
+                    },
+                ],
+            },
+        })
+    }
+}
+
+exports.createPages = ({ actions, graphql}) => {
+
+
     const { createPage } = actions;
     const MapsTemplate = path.resolve('src/templates/MapsTemplate/index.jsx');
 
@@ -22,10 +40,9 @@ exports.createPages = ({ actions, graphql }) => {
             
         }`
     ).then(res => {
-        if(res.errors) {
+        if (res.errors) {
             return Promise.reject(res.errors);
         }
-        console.log(JSON.stringify(res.data, null, 2));
         res.data.allMarkdownRemark.nodes.forEach(item => {
             // create an underscored slug as => username_map_style
             const slug = item.frontmatter.slug;
