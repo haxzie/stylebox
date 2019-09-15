@@ -3,10 +3,12 @@ module.exports = {
     title: `StyleBox | MapBox designer themes`,
     description: `Free to use, handcrafted collection of awesome styles and themes for MapBox.`,
     author: `@haxzie`,
+    siteUrl: `https://stylebox.netlify.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,6 +50,20 @@ module.exports = {
           families: [`Material Icons`]
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-101997744-7',
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
+      },
     }
   ],
 }
