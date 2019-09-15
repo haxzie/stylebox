@@ -15,7 +15,7 @@ function Header() {
                         fontWeight: "normal"
                     }}>StyleBox</h1>
                     <Expand/>
-                    <img src={GitHubLogo} className={styles.navIcon} />
+                    <a href="https://github.com/haxzie/stylebox"><img src={GitHubLogo} className={styles.navIcon} /></a>
                 </Row>
             </div>
         </Container>
