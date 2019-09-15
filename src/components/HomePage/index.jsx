@@ -10,7 +10,7 @@ function HomePage({ maps }) {
             {/* Header and caption of homepage */}
             <div className={styles.homePageHeader}>
                 <h1>Mapbox designer map styles.</h1>
-                <p>Free to use, Handcrafted collection of stylish MapBox styles.</p>
+                <p>Free to use, Handcrafted collection of awesome MapBox styles.</p>
             </div>
 
             {/* Content display grid */}

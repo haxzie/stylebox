@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-function Row({ children }) {
+function Row({ children, expand }) {
     return (
-        <div className={styles.row}>
+        <div className={[expand? styles.fullWidth: '', styles.row].join(' ')}>
             {children}
         </div>
     )

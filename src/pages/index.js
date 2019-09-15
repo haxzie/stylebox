@@ -19,6 +19,7 @@ query contentQuery {
     totalCount
     	nodes {
       frontmatter {
+        slug
         name
         author
         github

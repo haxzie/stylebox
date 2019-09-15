@@ -1,4 +1,5 @@
 ---
+slug: '/dracula'
 name: 'Darcula'
 url: 'mapbox://styles/haxzie/ck0cc2cdn01241eohsj4fcz5p'
 cover: './cover.png'

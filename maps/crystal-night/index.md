@@ -1,4 +1,5 @@
 ---
+slug: '/crystal-night'
 name: 'Crystal Night'
 url: 'mapbox://styles/haxzie/ck0aryyna2lwq1crp7fwpm5vz'
 cover: './cover.png'
