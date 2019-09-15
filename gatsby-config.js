@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `StyleBox | MapBox themes`,
+    title: `StyleBox | MapBox designer themes`,
     description: `Free to use, handcrafted collection of awesome styles and themes for MapBox.`,
     author: `@haxzie`,
   },
@@ -35,10 +35,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#232b33`,
+        theme_color: `#232b33`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/pallette.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

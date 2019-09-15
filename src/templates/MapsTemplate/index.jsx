@@ -1,11 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import MapPage from '../../components/MapPage'
+import SEO from '../../components/seo';
 
 function MapsTemplate({ data }) {
     console.log(data)
+    const pageData = data.markdownRemark.frontmatter;
     return (
-       <MapPage data={data.markdownRemark.frontmatter}/>
+        <>
+        <SEO title={`${pageData.name} by ${pageData.author}`}
+            description={`Stylish Mapbox designer theme ${pageData.name} by ${pageData.author} published at StyleBox`}/>
+        <MapPage data={pageData}/>
+        </>
     )
 }
 
