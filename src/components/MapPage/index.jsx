@@ -1,42 +1,23 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './styles.module.scss'
-// import ReactMapboxGl from "react-mapbox-gl"
 import { Row, Column, Expand } from '../Layout'
 
 
-// hack to get the mapbox module out of webpack bundling
-let ReactMapboxGl = {}
-if (typeof window !== `undefined`) {
-  ReactMapboxGl = require('react-mapbox-gl')
-} else {
-  ReactMapboxGl.Map = () => {
-    return class Mock extends React.Component {
-      constructor() {
-        super()
-      }
-      render() {
-        return <div />
-      }
-    }
-  }
-}
 
-function MapPage({ data }) {
-
-    const Map = ReactMapboxGl.Map({
-        accessToken: "pk.eyJ1IjoiaGF4emllIiwiYSI6ImNqZ2c2NWp3OTBxenAzM3FzeThydmZ0YncifQ.584ugILuKFfDPTxqyiO_0g"
-    });
-
+function MapPage({ data, Map }) {
     return (
         <div className={styles.mapsPage}>
-            <Map
-                style={data.url}
-                containerStyle={{
-                    height: "100vh",
-                    width: "100vw"
-                }}
-            ></Map>
+            <div style={{ width: '100vw', height: '100vh' }}>
+                <Map
+                    style={data.url}
+                    containerStyle={{ width: '100%', height: '100%' }}
+                    onMapLoaded={map => {
+                        console.log('Map loaded')
+                        map.resize();
+                    }}
+                ></Map>
+            </div>
             <div className={styles.bottomBar}>
                 <Row expand={true}>
                     <Expand>
@@ -54,7 +35,7 @@ function MapPage({ data }) {
                 <i className={["material-icons", styles.backButton].join(' ')}>arrow_back</i>
             </Link>
             <i className={["material-icons", styles.copyButton].join(' ')}>link</i>
-        </div>
+        </div >
     )
 }
 

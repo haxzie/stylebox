@@ -5,3 +5,7 @@
 @import './setup/typography';
 @import './setup/icons';
 // @import './setup/buttons';
+
+.mapboxgl-canvas, .mapboxgl-map {
+    height: 100% !important;
+}
